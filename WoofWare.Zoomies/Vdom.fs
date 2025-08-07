@@ -10,7 +10,7 @@ type Vdom =
     | Bordered of Vdom
     | PanelSplit of Direction * proportion: float * child1: Vdom * child2: Vdom
     | TextContent of string
-    | Checkbox
+    | Checkbox of bool
 
 module Vdom =
 
@@ -20,5 +20,5 @@ module Vdom =
 
     let checkbox = Vdom.Checkbox
 
-    let labelledCheckbox (label: string) : Vdom =
-        textContent label |> panelSplit Direction.Horizontal 0.2 checkbox
+    let labelledCheckbox (label: string) state : Vdom =
+        textContent label |> panelSplit Direction.Horizontal 0.2 (checkbox state)

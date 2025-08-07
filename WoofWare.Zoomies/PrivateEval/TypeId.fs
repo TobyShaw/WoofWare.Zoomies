@@ -2,6 +2,15 @@ namespace WoofWare.Zoomies
 
 type TypeId<'a> = private { Uid: int; Name: string }
 
+type TypeIdGenerator = { next: int ref }
+
+module TypeIdGenerator =
+
+    let generate { next = next } name =
+        let result = !next
+        next := result + 1
+        { Name = name; Uid = result }
+
 /// <summary>
 /// A function to apply to some TypeId.
 /// </summary>

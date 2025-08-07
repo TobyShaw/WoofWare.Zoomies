@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="5.0.0" />
+    <PackageReference Update="FSharp.Core" Version="9.0.202" />
     <PackageReference Include="TypeEquality" Version="0.3.0" />
+    <PackageReference Include="WoofWare.Incremental" Version="0.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +19,7 @@
     <Compile Include="PrivateEval\Trampoline.fsi" />
     <Compile Include="PrivateEval\Trampoline.fs" />
     <Compile Include="Vdom.fs" />
+    <Compile Include="Bonsai.fs" />
   </ItemGroup>
 
 </Project>
